@@ -18,8 +18,6 @@ st.title("🎯 JobSage - Your AI Career Assistant")
 # Tabs for 3 Features
 tabs = st.tabs(["Job Match Finder", "AI Interview Coach", "Resume Review Feedback"])
 
-
-# -------------------------
 with tabs[0]:
     st.header("🔍 Job Match Finder")
 
@@ -42,8 +40,6 @@ with tabs[0]:
             result = agent.find_matching_jobs(resume_text)
             st.success(result)
 
-
-# -------------------------
 with tabs[1]:
     st.header("🤖 AI Interview Coach (Interactive Mock Interview)")
 
@@ -61,7 +57,6 @@ with tabs[1]:
         else:
             resume_text = interview_file.read().decode("utf-8")
 
-        # 1️⃣ Ask Interview Question
         if st.button("Start Mock Interview - Ask Me a Question"):
             prompt = f"""Analyze this resume and the role '{role}' (if provided). 
 Based on this, ask ONE relevant interview question only. 
@@ -75,11 +70,9 @@ Resume:\n{resume_text}
             st.session_state["role"] = role
             st.info(question)
 
-        # 2️⃣ Answer the Question
         if "current_question" in st.session_state:
             user_answer = st.text_area("Your Answer:")
 
-            # 3️⃣ AI Feedback On The Answer
             if st.button("Submit My Answer for Feedback"):
                 evaluation_prompt = f"""You are an AI interview coach.
 Here is the question you asked: "{st.session_state['current_question']}"
@@ -98,7 +91,6 @@ Role: {st.session_state['role']}
                 st.success(feedback)
 
 
-# -------------------------
 with tabs[2]:
     st.header("📝 Resume Review Feedback (For Your Dream Role)")
 
