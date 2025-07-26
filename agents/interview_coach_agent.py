@@ -1,6 +1,6 @@
 from groq import Groq
 
-client = Groq(api_key="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")
+client = Groq(api_key="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")
 
 class InterviewCoachAgent:
     def conduct_interview(self, user_input):
