@@ -1,6 +1,6 @@
 from groq import Groq
 
-client = Groq(api_key="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")
+client = Groq(api_key="ggsk_zt9InQpPDoxgNbc7mHprWGdyb3FYbqGY6vWlzcXKaGOVZsHu4bcD")
 
 class JobMatchAgent:
     def find_matching_jobs(self, resume_text):
